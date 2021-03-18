@@ -4,7 +4,7 @@
 * [What do the results mean?](#what-do-the-results-mean)
 
 ## General info
-Use these files to test the following specifiers that are used in the Holberton School \_printf project
+Use these files to test the following specifiers that are used in the Holberton School \_printf project.
 * %  - percent\_test.c
 * %c - char\_test.c
 * %s - string\_test.c
@@ -20,7 +20,7 @@ Use these files to test the following specifiers that are used in the Holberton 
 * Clone repository to your local testfile directory
 * Use one test file at a time
 * Compile ALL of your .c files with the following gcc flags:
-  * gcc -Werror -Wextra -Wall -pedantic -Wno-format \*.c
+  * `gcc -Werror -Wextra -Wall -pedantic -Wno-format \*.c`
   * Execute the produced a.out file
 
 ## What do the results mean?
