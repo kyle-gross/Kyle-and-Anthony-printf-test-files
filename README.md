@@ -32,8 +32,8 @@ Use these files to test the following specifiers that are used in the Holberton 
     * `Error on array member: 3`
     * If the above message is seen, '3' indicates which edge case has failed.
     * Refer to the comments above array at the end of variable declarations IN THE TEST FILE
-      * `/* 1   2        3      4   5   6   7     8  */`
-      * `{0, INT_MAX, INT_MIN, 100, 99, 0, -100, -99};`
+      * `/* 1   2        3      4   5     6     7 */`
+      * `{0, INT_MAX, INT_MIN, 100, 99, -100, -99};`
       * In this case, 3 refers to the edge case INT\_MIN
 
 ## Happy testing!
