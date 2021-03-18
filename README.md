@@ -4,7 +4,7 @@
 * [What do the results mean?](#what-do-the-results-mean)
 
 ## General info
-Use these files to test the following specifiers that are used in the Holberton school \_printf project
+Use these files to test the following specifiers that are used in the Holberton School \_printf project
 * %  - percent\_test.c
 * %c - char\_test.c
 * %s - string\_test.c
