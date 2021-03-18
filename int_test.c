@@ -16,7 +16,7 @@ struct comp
 	int signal = 0;
 	char *format = "%d\n";
 
-	                 /* 1     2        3         4             5       6   7     9    10 */
+	                 /* 1     2        3         4             5       6   7     8     9 */
 	long int array[] = {0, INT_MAX, INT_MIN, -2147483649, 2147483648, 100, 99, -100, -99};
 
 
@@ -25,6 +25,7 @@ printf("<std library printf edge cases located below>\n");
 printf("--------------------------------\n");
 for (i = 0; i < 9; i++)
 {
+	printf("Test %d:\n", i + 1);
 	len = printf(format, (int)array[i]);
 	std_printf[x].return_val = len, std_printf[x].line_num = num, num++, x++;
 }
@@ -45,11 +46,8 @@ for (i = 0; i < 9; i++)
 printf("-----------------\n");
 printf("<ran all edge cases>\n");
 printf("-----------------\n");
-printf("<our _printf call fails on these indexed lines in the test file>\n\n");
 printf("<below are the line numbers where _printf function fails in testfile>");
-printf("\n<compare this list of numbers below to the test file to see where the");
-printf("\ncomments above integer array initilization indicate where your _printf is failing");
-printf(" an edge case>\nEXAMPLE: /* 1 2 etc... */\n");
+printf("\n<refer to the \"format\" array in the test file to see which edge case your _printf is failing>\n");
 printf("-----------------\n");
 /*RESULTS AFTER COMPARING*/
 for (y = 0; y < 9; y++)

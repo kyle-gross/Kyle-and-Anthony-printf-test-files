@@ -56,7 +56,7 @@ printf("-----------------\n");
 printf("<ran all edge cases>\n");
 printf("-----------------\n");
 printf("<below are the line numbers where your _printf function fails in testfile>");
-printf("\n<refer to the \"format\" array in the test file to see where your _printf is failing an edge case>\n");
+printf("\n<refer to the \"format\" array in the test file to see which edge case your _printf is failing>\n");
 printf("-----------------\n");
 /* RESULTS AFTER COMPARING */
 for (y = 0; y < 13; y++)
