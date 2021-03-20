@@ -16,8 +16,8 @@ struct comp
 	int signal = 0;
 	char *format = "%c\n";
 
-	                 /* 1    2     3     4    5    6   */
-	char array[10] = {'\0', 'a', '\n', '\t', ' ', '\\'};
+	               /* 1    2     3     4    5    6   */
+	char array[] = {'\0', 'a', '\n', '\t', ' ', '\\'};
 
 
 /*STD LIBRARY PRINTF EDGE TESTS*/
@@ -56,7 +56,8 @@ for (y = 0; y < 6; y++)
 {
 	if (std_printf[y].return_val != our_printf[y].return_val)
 	{
-		printf("Error on array member: %d\n", our_printf[y].line_num);
+		printf("Test %d failure. Edge case: \"%c\"", y + 1, array[y]);
+		printf("\"\n\tStd printf return val: %d\n\tYour _printf return val: %d\n\n", std_printf[y].return_val, our_printf[y].return_val);
 		signal = 1;
 	}
 }

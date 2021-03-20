@@ -47,15 +47,18 @@ for (i = 0; i < 5; i++)
 printf("-----------------\n");
 printf("<ran all edge cases>\n");
 printf("-----------------\n");
-printf("<below are the line numbers where _printf function fails in testfile>");
-printf("\n<refer to the \"format\" array in the test file to see which edge case your _printf is failing>\n");
-printf("-----------------\n");
 /*RESULTS AFTER COMPARING*/
 for (y = 0; y < 5; y++)
 {
 	if (std_printf[y].return_val != our_printf[y].return_val)
 	{
-		printf("Error on array member: %d\n", our_printf[y].line_num);
+		if (y == 1)
+			printf("Test %d failure. Edge case: \"UINT_MAX\"\n", y + 1);
+		else if (y == 2)
+			printf("Test %d failure. Edge case: \"INT_MIN\"\n", y + 1);
+		else
+			printf("Test %d failure. Edge case: \"%ld\"\n", y + 1, array[y]);
+		printf("\tStd printf return val: %d\n\tYour _printf return val: %d\n\n", std_printf[y].return_val, our_printf[y].return_val);
 		signal = 1;
 	}
 }

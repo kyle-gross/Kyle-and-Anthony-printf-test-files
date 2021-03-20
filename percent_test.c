@@ -14,10 +14,10 @@ struct comp
         int len = 0;
         int len2 = 0;
 	int signal = 0;
-	int args[] = {10, 0};
+	char args[] = {"c", 0};
 
 	              /*    1      2     3     4       5     6     7      8     9      10 */
-	char *format[] = {"%%%d", "%%d", "%", "\n%", "%\n", "%%", "% ", " %", "hi% ", "hi% [ ",
+	char *format[] = {"%%%c", "%%c", "%", "\n%", "%\n", "%%", "% ", " %", "hi% ", "hi% [ ",
 	      /*  11         12       13    */
 		" hi% ", " hi% [ ", "% \n "};
 
@@ -55,15 +55,19 @@ for (i = 0; i < 13; i++)
 printf("-----------------\n");
 printf("<ran all edge cases>\n");
 printf("-----------------\n");
-printf("<below are the line numbers where your _printf function fails in testfile>");
-printf("\n<refer to the \"format\" array in the test file to see which edge case your _printf is failing>\n");
-printf("-----------------\n");
 /* RESULTS AFTER COMPARING */
 for (y = 0; y < 13; y++)
 {
 	if (std_printf[y].return_val != our_printf[y].return_val)
 	{
-		printf("Error on array member: %d\n", y + 1);
+		printf("Test %d failure. Edge case: \"", y + 1);
+		for (i = 0; i < std_printf[y].return_val; i++)
+		{
+			if (format[y][i] == '\n')
+				putchar('\\'), putchar('n'), i++;
+			putchar(format[y][i]);
+		}
+		printf("\"\n\tStd printf return val: %d\n\tYour _printf return val: %d\n\n", std_printf[y].return_val, our_printf[y].return_val);
 		signal = 1;
 	}
 }
