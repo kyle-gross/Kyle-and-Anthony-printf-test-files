@@ -14,7 +14,7 @@ struct comp
         int len = 0;
         int len2 = 0;
 	int signal = 0;
-	char args[] = {"c", 0};
+	char args[] = {'c', 0};
 
 	              /*    1      2     3     4       5     6     7      8     9      10 */
 	char *format[] = {"%%%c", "%%c", "%", "\n%", "%\n", "%%", "% ", " %", "hi% ", "hi% [ ",
